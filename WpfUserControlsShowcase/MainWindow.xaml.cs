@@ -37,31 +37,32 @@ namespace WpfUserControlsShowcase
             Rows.Add(new Row("999 555 888", GetOutput));
             Rows.Add(new Row(GetOutput));
             Rows.Add(new Row(GetOutput));
+            Rows.Add(new Row());
+            Rows.Add(new Row());
         }
 
-        public DependencyProperty GetOutputProperty =
+        public static DependencyProperty GetOutputProperty =
             DependencyProperty.Register("GetOutput",
                 typeof(Func<string, Task<string>>),
                 typeof(MainWindow),
-                new PropertyMetadata(new Func<string, Task<string>>(GetOutputTemp)));
-
+                new PropertyMetadata(new Func<string, Task<string>>(async (s) => await Task.Run(
+                    () => { var r = s + " " + s + " " + s; Thread.Sleep(1000); return r; }
+        ))));
         public Func<string, Task<string>> GetOutput
         {
             get { return (Func<string, Task<string>>)GetValue(GetOutputProperty); }
             set { SetValue(GetOutputProperty, value); }
         }
 
-        private static Func<string, Task<string>> GetOutputTemp = new Func<string, Task<string>>(
-            async (s) => await Task.Run(
+        private static Func<string, Task<string>> GetOutputTemp = async (s) => await Task.Run(
                 () => { var r = s + " " + s + " " + s; Thread.Sleep(1000); return r; }
-        ));
+        );
 
-        public DependencyProperty RowsProperty =
+        public static DependencyProperty RowsProperty =
             DependencyProperty.Register("Rows",
             typeof(ICollection<Row>),
             typeof(TriggerListAdd),
             new PropertyMetadata(new ObservableCollection<Row>()));
-
         public ICollection<Row> Rows
         {
             get { return (ICollection<Row>)GetValue(RowsProperty); }

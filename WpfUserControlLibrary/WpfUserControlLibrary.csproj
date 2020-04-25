@@ -48,6 +48,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SimpleBooleanIndicator.xaml.cs">
+      <DependentUpon>SimpleBooleanIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TriggerListAdd.xaml.cs">
       <DependentUpon>TriggerListAdd.xaml</DependentUpon>
     </Compile>
@@ -59,6 +62,10 @@
       <DependentUpon>CustomListUserControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SimpleBooleanIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TriggerListAdd.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

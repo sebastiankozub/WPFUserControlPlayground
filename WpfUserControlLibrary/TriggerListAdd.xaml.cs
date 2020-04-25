@@ -22,7 +22,6 @@ namespace WpfUserControlLibrary
             DependencyProperty.Register("GetOutputFromInput", 
                 typeof(Func<string, Task<string>>), 
                 typeof(TriggerListAdd));
-
         public Func<string, Task<string>> GetOutputFromInput
         {
             get { return (Func<string, Task<string>>)GetValue(GetOutputFromInputProperty); }
@@ -32,9 +31,7 @@ namespace WpfUserControlLibrary
         public static DependencyProperty RowsProperty =
             DependencyProperty.Register("ControlRows",
                 typeof(ICollection<Row>),
-                typeof(TriggerListAdd),
-                new PropertyMetadata(new ObservableCollection<Row>()));// RowsCollectionChanged));
-
+                typeof(TriggerListAdd));
         public ICollection<Row> ControlRows
         {
             get { return (ICollection<Row>)GetValue(RowsProperty); }
@@ -42,10 +39,9 @@ namespace WpfUserControlLibrary
         }
 
         public static DependencyProperty TextableProperty =
-            DependencyProperty.Register("Textable", 
-                typeof(string), 
-                typeof(TriggerListAdd),
-                new PropertyMetadata("Default Output"));
+            DependencyProperty.Register("Textable",
+                typeof(string),
+                typeof(TriggerListAdd));
         public string Textable
         {
             get { return (string)GetValue(TextableProperty); }
@@ -55,6 +51,22 @@ namespace WpfUserControlLibrary
         private void ButtonGetOutput_Click(object sender, RoutedEventArgs e)
         {
             ControlRows.Add(new Row(TextboxInput.Text, GetOutputFromInput));
+        }
+
+        private void SelfTriggerListAdd_Loaded(object sender, RoutedEventArgs e)
+        {
+            ControlRows.Add(new Row("999 222,00", GetOutputFromInput));
+            ControlRows.Add(new Row("322 444 666,88", GetOutputFromInput));
+            ControlRows.Add(new Row("465 444 666,99", GetOutputFromInput));
+            ControlRows.Add(new Row("282 222,99", GetOutputFromInput));
+            ControlRows.Add(new Row("666 555 888", GetOutputFromInput));
+            ControlRows.Add(new Row("322 444 666,88", GetOutputFromInput));
+            ControlRows.Add(new Row("222 212,99", GetOutputFromInput));
+            ControlRows.Add(new Row("999 555 888", GetOutputFromInput));
+            ControlRows.Add(new Row(GetOutputFromInput));
+            ControlRows.Add(new Row(GetOutputFromInput));
+            ControlRows.Add(new Row());
+            ControlRows.Add(new Row());
         }
     }
 

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="500" 
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
-             x:Name="SelfTriggerListAdd" >
+             x:Name="SelfTriggerListAdd" Loaded="SelfTriggerListAdd_Loaded" >
     <Grid>
         <StackPanel HorizontalAlignment="Stretch" Margin="0 0 0 0" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" >
             <StackPanel Orientation="Horizontal" Margin="0 0 0 0" >
@@ -15,15 +15,15 @@
                 <Button  x:Name="ButtonGetOutput" Width = "140" Margin = "3 5" Content="GetValue!" Click="ButtonGetOutput_Click" />
                 <Label x:Name="LabelOutput"  Margin = "3 5" Content="{Binding Path=Textable, ElementName=SelfTriggerListAdd}" />
             </StackPanel>
-            <ItemsControl x:Name="Items"  Margin = "3 5" 
+            <ItemsControl x:Name="Items"  Margin = "3 5" HorizontalAlignment="Stretch"
                 ItemsSource = "{Binding Path=ControlRows, ElementName=SelfTriggerListAdd}" >
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation = "Horizontal">
                             <TextBox Text = "{Binding Path=Input, Mode = TwoWay}" 
-                                Width = "100" Margin = "3 5 3 5"/>
+                                Width = "100" Margin = "3 5 3 5" HorizontalAlignment="Stretch" />
                             <TextBox Text = "{Binding Path=Output, Mode = OneWay}" 
-                                Width = "Auto" Margin = "0 5 3 5"/>
+                                Width = "Auto" Margin = "0 5 3 5"  HorizontalAlignment="Stretch" />
                         </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
