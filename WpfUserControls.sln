@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUserControlsShowcase", "WpfUserControlsShowcase\WpfUserControlsShowcase.csproj", "{E3274A21-6783-4F5F-AE20-35D2804B5AF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUserControlLibrary", "WpfUserControlLibrary\WpfUserControlLibrary.csproj", "{A5E01ED2-1255-42B2-97CC-4FD0367C5E19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3274A21-6783-4F5F-AE20-35D2804B5AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3274A21-6783-4F5F-AE20-35D2804B5AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3274A21-6783-4F5F-AE20-35D2804B5AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3274A21-6783-4F5F-AE20-35D2804B5AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E01ED2-1255-42B2-97CC-4FD0367C5E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E01ED2-1255-42B2-97CC-4FD0367C5E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E01ED2-1255-42B2-97CC-4FD0367C5E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E01ED2-1255-42B2-97CC-4FD0367C5E19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09BE1D08-C90C-455D-92E0-CBB1F9D9AA50}
+	EndGlobalSection
+EndGlobal
