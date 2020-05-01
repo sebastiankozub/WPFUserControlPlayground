@@ -6,6 +6,8 @@ WPF UserControl that refresh its visual state when rows to internal collection a
 
 ### TODO
 
+!!! Wrong binding pattern
+
    - row delete
    - row update when no value or error
 
